@@ -52,8 +52,8 @@ public class PowerShellCommand {
     }
 
     public static void main(String[] args) {
-        new PowerShellCommand("powershell.exe arp -a | where {$_ -match \"动态\\b\"}");
-        new PowerShellCommand("powershell.exe arp -a | where {$_ -match \"\"\"动态\\b\"\"\"}");
+        new PowerShellCommand("powershell.exe pwd");// example1
+        new PowerShellCommand("powershell.exe ls");// example2
     }
 
 }
