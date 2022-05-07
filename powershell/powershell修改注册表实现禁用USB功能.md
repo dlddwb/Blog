@@ -6,6 +6,8 @@ cd HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR
 ```
 效果如图：
 ![56847b8f3c3f18513759fd7c625bdcad.png](56847b8f3c3f18513759fd7c625bdcad.png)
+![图片](https://user-images.githubusercontent.com/57973265/167260225-df30d06f-b5ce-4ec1-8b7e-52b890bf6dfd.png)
+
 然后执行命令`Set-ItemProperty -Path . -PSProperty start -Value 4`即可实现禁用U盘。
 **需要注意几点**：
 1. 这里的`.`表示当前路径，即`HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR`，是`Set-ItemProperty`命令的必要参数，不可省略
