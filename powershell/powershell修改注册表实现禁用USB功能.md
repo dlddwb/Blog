@@ -5,7 +5,6 @@
 cd HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR
 ```
 效果如图：
-![56847b8f3c3f18513759fd7c625bdcad.png](56847b8f3c3f18513759fd7c625bdcad.png)
 ![图片](https://user-images.githubusercontent.com/57973265/167260225-df30d06f-b5ce-4ec1-8b7e-52b890bf6dfd.png)
 
 然后执行命令`Set-ItemProperty -Path . -PSProperty start -Value 4`即可实现禁用U盘。
@@ -18,15 +17,15 @@ Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR -PSProper
 ```
 ## 实现效果
 为便于观察，我们可以按住`win + R`，输入`regedit`并回车找到路径`HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR`，如图：
-![d394b8b2f4bc1de8d223f532e4958059.png](d394b8b2f4bc1de8d223f532e4958059.png)
+![图片](https://user-images.githubusercontent.com/57973265/167260282-fd1de404-ad14-4763-a9cb-10efa5f73ac1.png)
 可以看到，在未执行命令时Start的值是3
 执行命令后：
-![a0257bb0897a6e973b1b8f0c585690c3.png](a0257bb0897a6e973b1b8f0c585690c3.png)
+![图片](https://user-images.githubusercontent.com/57973265/167260298-6b9651d1-4509-4a7e-9779-f76e86da01ba.png)
 可以看到，Start的值已被成功修改为4。
 同样的，若要启用U盘设备，只需将Start的值改为4即可，命令如下：
 `Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\USBSTOR -PSProperty start -Value 3`
 效果如图：
-![bfb0df47d695b19ff0d5c23e763fe721.png](bfb0df47d695b19ff0d5c23e763fe721.png)
+![图片](https://user-images.githubusercontent.com/57973265/167260365-871019de-fa46-40a9-9582-8f391b544d21.png)
 ## 拓展：远程连接计算机实现PowerShell修改注册表实现禁用和启用U盘功能
 只需执行以下命令即可
 ```powershell
